@@ -41,7 +41,7 @@ public final class ConcurrentGUI extends JFrame {
         final Agent agent = new Agent();
         new Thread(agent).start();
         /*
-         * Register a listener that stops it
+         * Register the listeners to stop, increment and decrement
          */
         btnStop.addActionListener((e) -> agent.stopCounting());
         btnUp.addActionListener((e) -> agent.setIncrement());
@@ -56,8 +56,8 @@ public final class ConcurrentGUI extends JFrame {
 
         /*
          * boolean upOrDown:
-         * -true if up
-         * -false if down
+         * -true if increment
+         * -false if decrement
          */
 
         @Override

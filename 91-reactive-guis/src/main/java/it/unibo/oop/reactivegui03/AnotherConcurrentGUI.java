@@ -2,8 +2,6 @@ package it.unibo.oop.reactivegui03;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.TimeUnit;
 
@@ -53,7 +51,7 @@ public final class AnotherConcurrentGUI extends JFrame {
             agent.stopCounting();
         }).start();
         /*
-         * Register a listener that stops it
+         * Register the listeners to stop, increment and decrement
          */
         btnStop.addActionListener((e) -> agent.stopCounting());
         btnUp.addActionListener((e) -> agent.setIncrement());
@@ -68,8 +66,8 @@ public final class AnotherConcurrentGUI extends JFrame {
 
         /*
          * boolean upOrDown:
-         * -true if up
-         * -false if down
+         * -true if increment
+         * -false if decrement
          */
 
         @Override
