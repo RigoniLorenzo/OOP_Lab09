@@ -3,9 +3,12 @@ plugins {
     application
 }
 
+tasks.javadoc {
+    isFailOnError = false
+}
+
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
+    mavenCentral()
     jcenter()
 }
 

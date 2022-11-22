@@ -48,7 +48,7 @@ public final class ConcurrentGUI extends JFrame {
         btnDown.addActionListener((e) -> agent.setDecrement());
     }
 
-    private class Agent implements Runnable{
+    private class Agent implements Runnable {
 
         private volatile boolean stop;
         private int counter;
@@ -69,8 +69,7 @@ public final class ConcurrentGUI extends JFrame {
                     SwingUtilities.invokeAndWait(() -> ConcurrentGUI.this.display.setText(nextText));
                     if (this.upOrDown) {
                         this.counter++;
-                    }
-                    else {
+                    } else {
                         this.counter--;
                     }
                     Thread.sleep(100);
@@ -79,11 +78,10 @@ public final class ConcurrentGUI extends JFrame {
                      * This is just a stack trace print, in a real program there
                      * should be some logging and decent error reporting
                      */
-                    ex.printStackTrace();
+                    ex.printStackTrace(); // NOPMD: allowed as this is just an exercise
                 }
             }
         }
-
         /**
          * External command to stop counting.
          */
@@ -93,17 +91,14 @@ public final class ConcurrentGUI extends JFrame {
             btnUp.setEnabled(false);
             btnDown.setEnabled(false);
         }
-        
-
         /**
-         * External command to set the increment
+         * External command to set the increment.
          */
         public void setIncrement() {
             this.upOrDown = true;
         }
-
         /**
-         * External command to set the decrement
+         * External command to set the decrement.
          */
         public void setDecrement() {
             this.upOrDown = false;

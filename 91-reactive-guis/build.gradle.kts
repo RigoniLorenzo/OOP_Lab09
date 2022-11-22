@@ -3,6 +3,14 @@ plugins {
     application
 }
 
+repositories {
+    mavenCentral()
+}
+
+tasks.javadoc {
+    isFailOnError = false
+}
+
 val mainClass: String by project
 
 application {
